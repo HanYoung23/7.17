@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>함수 복습</title>
+  </head>
+    <body>
+      <script>
+      /*
+      function 함수명( [인자...[,인자]] ){
+   코드
+   return 반환값}
+   */
+   function numbering(parameter) { // 함수의 기본적인 형태
+     document.write(parameter+'<br>');
+   }
+  document.write('parameter에 상수 숫자를 입력'+'<br>');
+   numbering(12341234); // 함수는 ()가 있음, ()안에는 상수를 넣고 문자열은 ''를 이용
+   document.write('parameter에 상수 숫자를 문자열로 입력'+'<br>');
+    numbering('12341234');
+    document.write('parameter에 상수 문자열을 입력'+'<br>');
+     numbering('문자열');
+     var i = '변수';
+     document.write('parameter에 선언된 변수 i=변수 를 입력'+'<br>');
+      numbering(i);
+      </script>
+      </body>
+</html>
