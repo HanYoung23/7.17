@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="HTML 복습자료"> <!--복습자료에대한 내용 검색시 해당 html파일이 검색됨-->
+  <meta name="keywords" content="코딩,coding,html"> <!--해당 컨텐츠에대한 내용 검색시 해당 html파일이 검색됨-->
+  <meta http-equiv="refresh" content="3000"> <!--3000초 마다 해당 페이지가 새로고침 됨-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--페이지 크기 자동 조정-->
+  <title>html review</title>
+  </head>
+  <body>
+    <a href="7.28 html review"><h1>HTML 복습</h1></a>
+    <ol>
+      <li>기술소개</li><br>
+
+      <li>기본문법</li><br>
+
+      <li>하이퍼텍스트와 속성</li>
+      <!-- h태그의 경우 줄바꿈 기능을 포함하고 있다.-->
+      <h3>오늘의 명언</h3>
+      우리 모두는 <strong>자신의 힘</strong>으로 발견한 내용을 가장 쉽게 익힌다.<a target="_blank" href="https://ko.wikipedia.org/wiki/%EB%8F%84%EB%84%90%EB%93%9C_%EC%BB%A4%EB%88%84%EC%8A%A4" title="aka 전설적인 프로그래머">(도널드 커누스)</a><br><br>
+
+      <li>리스트와 태그의 중첩</li><br>
+      li(리스트) 태그와 ol, ul 태그를 동시에 사용한다.<br><br>
+
+      <li>문서의 구조</li><br>
+      html 태그와 head, body 태그로 구분한다.<br><br>
+
+      <li>DOCTYPE</li><br>
+      어떤 표준의 태그인지 표시해준다.<br><br>
+
+      <li>웹사이트 만들기</li><br>
+
+      <li>개발도구</li><br>
+
+      <li>HTML의 변천사와 통계</li><br>
+
+      <li>주요 태그</li><br>
+      <ul>
+        <li>단락 - p</li>
+        p 태그를 사용 시 각 단락들을 구분하고 줄바꿈한다.<br><br>
+
+        <li>줄바꿈 - br</li>
+        br 태그를 사용 시 단순히 줄바꿈한다.<br><br>
+
+        <li>이미지 - img</li>
+        img + src / height / width / alt (이미지 사용x일 때 메세지) / title 등으로 이미지를 삽입한다.<br>
+        <img src="img.png" alt="이미지를 불러올 수 없습니다." title="이미지 태그" height="" width=""><br>
+
+        <li>표 - table</li>
+        table 태그로 tl, tr, td 태그를 묶어서 사용한다. border 속성으로 테두리를 꾸민다.<br>
+        <table border="3">
+          <thead> <!--표의 머리부분을 표시, 기능 x-->
+            <tr>
+              <th>이름</th><th>성별</th><th>나이</th><th>돈</th> <!--th는 표의 머리부분으로 진하게 표시된다.-->
+            </tr>
+          </thead>
+          <tbody> <!--표의 내용 부분을 표시, 기능 x-->
+            <tr>
+              <td>AAA</td><td>남</td><td rowspan="2">10</td><td>100</td> <!-- rowspan은 행을 병합한다.-->
+            </tr>
+            <tr>
+              <td>BBB</td><td>여</td><td>200</td>
+            </tr>
+          </tbody>
+          <tfoot> <!-- 표의 마지막 행을 구분하고 코드의 위치와 상관없이 표의 최하단에 위치한다. -->
+            <tr>
+              <td colspan="3">합계</td><td>300</td> <!-- colspan은 열을 병합한다.-->
+            </tr>
+          </tfoot>
+          </table><br><br>
+
+          <li>입력 양식 - form</li>
+          <form action="http://localhost/login.php"> <!--submit 버튼을 누르면 정보가 보내질 주소-->
+            <p>아이디: <input type="text" name="id"></p> <!--name 속성을 사용하여 주소 text와 구분-->
+            <p>비밀번호: <input type="password" name="pwd"></p>
+            <p>주소: <input type="text" name="address"></p>
+            <p>textarea:
+              <textarea cols="50" rows="3">textarea</textarea>
+            </p>
+            <input type="submit" value="확인">
+          </form>
+          <form action="http://localhost/login.php">
+            <p>색상 option</p>
+            <select name="color"> <!--name 속성을 입력해야 submit 시 데이터가 전송 됨-->
+              <option value="red">붉은색</option>
+              <option value="blue">파란색</option>
+              <option value="black">검은색</option>
+            </select>
+            <input type="submit">
+            <p>색상 radio (단일선택)</p>
+            <form action="http://localhost/login.php">
+              빨간색: <input type="radio" value="red" name="color">
+              파란색: <input type="radio" value="blue" name="color" checked> <!--checked 속성을 사용하여 초기 값 선택-->
+              검은색: <input type="radio" value="black" name="color">
+              <input type="submit" value="제출">
+            </form>
+            <p>사이즈 checkbox (다중선택)</p>
+            <form action="http://localhost/login.php">
+              100: <input type="checkbox" value="100" name="size">
+              105: <input type="checkbox" value="105" name="size" checked> <!--checked 속성을 사용하여 초기 값 선택-->
+              110: <input type="checkbox" value="110" name="size">
+              <input type="submit" value="제출">
+            </form>
+            <p>버튼</p>
+            <input type="button" value="버튼" onclick="alert('asdfasdf')"><br><br> <!--자바스크립트의 alert 를 이용하지 않으면 쓸모없음-->
+            <p>Hidden</p>
+            <form action="http://localhost/login.php">
+              <input type="text" name="id">
+              <input type="hidden" name="hide" value="hidden text"> <!--버튼을 눌러서 정보를 보내면 뭔가가 같이 전송됨-->
+              <input type="submit">
+            </form>
+            <p>label</p> <!--input 태그의 내용을 묶어서 사용의 편의성을 높인다.-->
+            <form>
+              <label>
+              <p>아이디: <input type="text" name="id"></p>
+            </label>
+            <label>
+              <p>비밀번호: <input type="password" name="pwd"></p>
+            </label>
+              <label>
+              100: <input type="checkbox" value="100" name="size">
+              </label>
+              <label>
+              105: <input type="checkbox" value="105" name="size" checked>
+              </label>
+            </form>
+            <p>method</p> <!--input으로 받은 정보를 submit을 통해 action으로 보낼 때의 방식을 결정 노출or비노출-->
+            <form action="http://localhost/login.php" method="post"> <!--method 속성이 post면 비노출, default는 get방식인 노출-->
+              <label>
+              <p>아이디: <input type="text" name="id"></p>
+            </label>
+            <label>
+              <p>비밀번호: <input type="password" name="pwd"></p>
+            </label>
+            <input type="submit">
+            </form>
+            <p>파일 업로드</p> <!--파일 업로드를 위한 기능은 HTML로 만들어진다.-->
+            <form action="http://localhost/login.php" method="post" enctype="multipart/form-data"> <!--만들어놓은 서버(php이용)으로 전송-->
+              <input type="file" name="profile"> <!--type속성이 file일 경우 무조건 form에 enctype 설정해야함-->
+              <input type="submit">
+            </form><br>
+
+            <li>정보로서 HTML</li>
+            meta 태그는 해당 html의 정보를 담고있는 태그이다. (검색에 도움)<br>
+            header / nav / section / article / footer 태그로 문서를 구분하면 좋다.<br>
+            검색엔진에 대해서 참고<br><br>
+
+            <li>웹개발자 도구</li>
+            웹페이지 -> 마우스 우클릭 -> 검사를 활용<br><br>
+
+            <li>모바일 지원</li>
+            (meta name="viewport" content="width=device-width, initial-scale=1.0")을 고정적으로 사용하여 여러 종류의 크기에서도 활용 할 수 있음<br><br>
+
+            <li>외부문서 - iframe</li> <!--보안에 취약하므로 보장된 내용만 가져올 것-->
+            <!--sandbox 속성을 사용하여 최소한의 보안 적용-->
+            <iframe src="file:///C:/Bitnami/wampstack-7.4.7-0/apache2/htdocs/dailyprojects/7.29%20sandbox.html" height="200" width="400" sandbox></iframe><br><br>
+      </ul>
+      </ol>
+    </body>
+</html>
